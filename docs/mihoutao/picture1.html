@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<style type="text/css">
+			body,
+			p,
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6,
+			ul,
+			fieldset,
+			iframe {
+				margin: 0;
+				padding: 0;
+			}
+			
+			ul {
+				list-style: none;
+			}
+			
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+			}
+			
+			body {
+				background: url(images/mht/bg.jpg) no-repeat 0 0/100% 100%;
+				width: 1360px;
+				height: 662px;
+				overflow-y: hidden;
+				overflow-x: hidden;
+			}
+			
+			@charset "utf-8";
+			.wrapper {
+				position: relative;
+				width: 960px;
+				height: 400px;
+				margin: 100px auto;
+			}
+			
+			.wrapper ul {
+				position: relative;
+				width: 100%;
+				height: 100%;
+				display: flex;
+				flex-flow: row nowrap;
+				justify-content: center;
+				margin-top: 300px;
+				/*align-items: center;*/
+			}
+			
+			.wrapper li {
+				position: absolute;
+				width: 480px;
+				height: 300px;
+				transition: all 0.5s ease-in-out;
+				-webkit-transition: all 0.5s ease-in-out;
+				-o-transition: all 0.5s ease-in-out;
+				-moz-transition: all 0.5s ease-in-out;
+				-ms-transition: all 0.5s ease-in-out;
+			}
+			
+			.wrapper li img {
+				width: 480px;
+				height: 300px;
+			}
+			
+			.wrapper .pic1 {
+				transform: translate(-432px, -233px) scale(0.2);
+				opacity: 0;
+				z-index: 1;
+			}
+			
+			.wrapper .pic2 {
+				transform: translate(-340px, -7px) scale(0.4);
+				opacity: 0.2;
+				z-index: 2;
+			}
+			
+			.wrapper .pic3 {
+				transform: translate(-228px, -7px) scale(0.6);
+				opacity: 0.2;
+				z-index: 3;
+			}
+			
+			.wrapper .pic4 {
+				transform: translate(-110px, -7px) scale(0.8);
+				opacity: 0.2;
+				z-index: 4;
+			}
+			
+			.wrapper .pic5 {
+				transform: translate(0, 0) scale(1);
+				opacity: 1;
+				z-index: 5;
+			}
+			
+			.wrapper .pic6 {
+				transform: translate(110px, -7px) scale(0.8);
+				opacity: 0.2;
+				z-index: 4;
+			}
+			
+			.wrapper .pic7 {
+				transform: translate(228px, -7px) scale(0.6);
+				opacity: 0.2;
+				z-index: 3;
+			}
+			
+			.wrapper .pic8 {
+				transform: translate(340px, -7px) scale(0.4);
+				opacity: 0.2;
+				z-index: 2;
+			}
+			
+			.wrapper .pic9 {
+				transform: translate(432px, -233px) scale(0.2);
+				opacity: 0;
+				z-index: 1;
+			}
+			
+			.wrapper .controller {
+				position: absolute;
+				top: 45%;
+				left: 10%;
+				width: 80%;
+				height: 30px;
+				z-index: 10;
+				cursor: pointer;
+			}
+			
+			.wrapper .controller span {
+				position: absolute;
+				display: block;
+				width: 30px;
+				height: 30px;
+				opacity: 0;
+				transition: all 0.5s ease;
+			}
+			
+			a {
+				width: 86px;
+				height: 86px;
+				display: block;
+				position: absolute;
+				bottom: -90px;
+				right: -80px;
+			}
+		</style>
+		<script>
+			window.onload = function() {
+				var slideItems = document.querySelectorAll(".wrapper .slide li");
+				var arr = [];
+				var len = slideItems.length;
+				var timer = null;
+				var flag = false;
+				for(var i = 0; i < len; i++) {
+					var transform = getStyle(slideItems[i]).transform;
+					var opacity = getStyle(slideItems[i]).opacity;
+					var zIndex = getStyle(slideItems[i]).zIndex;
+					arr.push([transform, opacity, zIndex]);
+				}
+				carousel();
+				//进入li清除定时器
+				document.querySelector(".wrapper .slide").addEventListener("mouseenter", function() {
+					clearInterval(timer);
+				});
+				//鼠标离开的时候开启定时器
+				document.querySelector(".wrapper .slide").addEventListener("mouseleave", carousel);
+
+				function carousel() {
+					timer = setInterval(function() {
+						flag ? moveToLeft() : moveToRight();
+					}, 3000);
+				}
+
+				//左移
+				function moveToLeft() {
+					arr.unshift(arr.pop());
+					for(var i = 0; i < len; i++) {
+						slideItems[i].style.transform = arr[i][0];
+						slideItems[i].style.opacity = arr[i][1];
+						slideItems[i].style.zIndex = arr[i][2];
+					}
+					flag = true;
+				}
+
+				//右移
+				function moveToRight() {
+					arr.push(arr.shift());
+					for(var i = 0; i < len; i++) {
+						slideItems[i].style.transform = arr[i][0];
+						slideItems[i].style.opacity = arr[i][1];
+						slideItems[i].style.zIndex = arr[i][2];
+					}
+					flag = false;
+				}
+			};
+
+			function getStyle(obj) {
+				return obj.currentStyle ? obj.currentStyle : getComputedStyle(obj);
+			}
+		</script>
+		<title>旋转相册</title>
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<ul class="slide">
+				<li class="pic1"><img src="images/mht/mm9.jpg" /></li>
+				<li class="pic2"><img src="images/mht/mm1.jpg" /></li>
+				<li class="pic3"><img src="images/mht/mm2.jpg" /></li>
+				<li class="pic4"><img src="images/mht/mm3.jpg" /></li>
+				<li class="pic5"><img src="images/mht/mm4.jpg" /></li>
+				<li class="pic6"><img src="images/mht/mm5.jpg" /></li>
+				<li class="pic7"><img src="images/mht/mm6.jpg" /></li>
+				<li class="pic8"><img src="images/mht/mm7.jpg" /></li>
+				<li class="pic9"><img src="images/mht/mm8.jpg" /></li>
+			</ul>
+			
+		</div>
+	</body>
+
+</html>

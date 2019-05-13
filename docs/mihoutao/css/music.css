@@ -1,0 +1,72 @@
+@charset "utf-8";
+body,html{margin: 0  ;padding: 0;list-style: none;background-color: #333;font-family: "微软雅黑";}
+ul{margin: 0 ;padding: 0;list-style: none;}
+li{float: left;}
+a{text-decoration: none;}
+header{width: 100%;height: 30px;border-bottom: 1px solid #ccc;}
+.main{width: 900px;margin: 0 auto;height: 500px;background: yellow;}
+.main .name{width: 100%;height: 100px;background-color: #1b0824;position: relative;}
+.main .name span:first-child{color: #fff;position: absolute;top: 34px;left: 45px;font-size: 30px;}
+.main .name span:last-child{color: #fff;position: absolute;bottom: 0px;left: 45px;font-size: 23px;}
+.main .sourse{padding-left: 135px; height:526px;width: 765px;background: linear-gradient(#1b0824,#601b85,#984fbd);padding-top: 94px;}
+.main .sourse .phone{float: left; width: 379px;height: 452px;background:url(../img/phone.png)no-repeat;background-position: left 4px;}
+.main .sourse .word{margin-top: 180px; float: left; width: 340px;margin-left: 40px;color: #fff;}
+.main .sourse .word span:first-child{font-size: 33px;}
+.main .sourse .word span:last-child{font-size: 14px;}
+.main .part{width: 0;border-left: 900px solid #300648;margin-top: -164px;z-index: 999;position: absolute;
+border-bottom:77px solid #300648;border-top: 157px solid transparent;border-right:0px solid transparent;}
+.main .part span{position: absolute;left: -844px;color: #fff;}
+.main .part span:first-child{font-size: 30px;top: -22px;}
+.main .part span:last-child{font-size: 16px;}
+
+
+/*轮播图部分*/
+.main .slider{width: 100%;background: #666;}
+.main .slider .lunbo{width: 100%;height: 643px;background:linear-gradient(to bottom, #300648 20%,#310747 30%,rgb(75, 21, 105)) ;}
+.main .slider .lunbo .lunbo-box{padding-top: 38px; position: relative;transform-style: preserve-3d;
+perspective: 800px; width: 760px;height: 613px;margin:91px auto  0;}
+.main .slider .lunbo .lunbo-box img{position: absolute;height: 500px;width: 260px;transition: all 1s;
+-webkit-box-reflect: below 5px linear-gradient(rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, .8));}
+.left{transform: rotateY(18deg)}
+.mid{transform:translateZ(100px);}
+.right{transform: rotateY(-18deg);}
+
+.main .slider .gd{width: 100%;height: 180px;background:linear-gradient(to right,rgb(75, 21, 105),rgb(75, 21, 105),rgb(75, 21, 105));}
+.main .slider .gd .jj{width: 0;height:0;border-right: 199px solid rgb(48, 6, 72);border-bottom: 0px solid rgb(48, 6, 72);border-left:0px solid transparent;border-top:100px solid transparent;float: right;margin-top: 80px;}
+/*图片斜着摆放*/
+.main .slider .download {position: relative; width: 100%;height: 751px;background: url(../img/nan.jpg)no-repeat;}
+.main .slider .download div{position: absolute;right: 0;color: #fff;width: 208px;top: 24px;}
+.main .slider .download div span:first-child{font-size: 29px;}
+.main .slider .download div span:last-child{font-size: 16px;}
+/*登陆框*/
+.main .login{width: 100%;height: 673px;background: linear-gradient(to right,rgb(75, 21, 105),rgb(143, 42, 200),#43135d);}
+.main .login .show{width: 100%;height: 100px;text-align: center;color: #fff;}
+.main .login .show span:first-child{font-size: 30px;}
+.main .login .show  span:last-child{font-size: 14px;}
+.main .login  .oin{height: 571px;width: 323px;margin: 0 auto;}
+.main .login  .oin .nav{width: 100%;height: 24px;background-color: #8923b3;}
+.main .login  .oin .nav div{width: 33.3%;height: 100%;float: left;}
+
+.main .login  .oin .nav .mid{text-align: center;color: #fff;}
+.main .login  .oin .nav  .right{text-align: right;}
+
+
+.main .login  .oin .ey{background: url(../img/oin-1.jpg)no-repeat center top;width: 100%;height:134px ;}
+.main .login  .oin .login-bar{position: relative; height:415px;width: 100%;background: url(../img/login-bar.jpg)no-repeat;}
+.main .login  .oin .login-bar div input{width: 180px;height: 25px;color: #6E2098;}
+.main .login  .oin .login-bar div{position: absolute;outline: none;border: 0;top:58px;left: 55px;}
+.main .login  .oin .login-bar div span{width: 28px;height: 25px;display: inline-block;float: left;}
+.main .login  .oin .login-bar div:first-child{top:55px;left: 55px;opacity: 0.2;width: 213px;height: 25px;}
+.main .login  .oin .login-bar div:nth-of-type(2){top:113px;left: 55px;opacity: 0.2;width: 213px;height: 25px;}
+.main .login  .oin .login-bar #enter{ position: absolute;top: 203px;left: 54px;width: 215px;border: 0; outline: none; height: 35px;text-align: center;background: transparent;
+}
+.main .login  .oin .login-bar #regist{position: absolute;top: 245px;left: 54px;border: 1px solid #fff;background: transparent; outline: none;height: 40px;text-align: center;width: 215px;}
+.icon-search,.icon-signal{width: 16px;height: 16px;font-size: 16px;color:#fff}
+
+
+
+.main .four{width: 100%;height: 1280px;background: linear-gradient(to right,rgb(75, 21, 105),#6e2098,#43135d);}
+.main .four div{width: 50%;height:572px;float: left;text-align: center;padding-top: 34px;}
+.main .four div img{box-shadow: 10px 10px 10px  7px rgba(0,0,0,.3);}
+#bgCanvas{position:absolute;left:0px;top:0px;z-index:-1;}
+.main .four div:hover{ transform:rotateY(360deg) scale(1.3);transition: all  4s 0.5s; }

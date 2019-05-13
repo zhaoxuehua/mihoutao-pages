@@ -1,0 +1,53 @@
+#lunbotu{width: 1200px;margin:0 auto;background-color: pink;border: 1px solid #000;}
+	#box {margin: 0 auto;
+				position: relative;
+				width: 790px;
+				height: 340px;
+				border: 1px solid #000;
+			}
+			/*这样可以实现图片在一张*/
+			
+			#box a {
+				position: absolute;
+				display: none;
+			}
+			
+			#box .first {
+				display: block;
+			}
+			
+			.btn {
+				position: absolute;
+				bottom: 0px;
+				right: 15px;
+				width: 120px;
+				height: 20px;
+			}
+			
+			.btn li {
+				border-radius: 50%;
+				text-align: center;
+				float: left;
+				list-style: none;
+				padding: 0 5px;
+				background-color: #000;
+				margin: 0 5px;
+				color: #fff;
+			}
+			
+			.btn .red {
+				background-color: red;
+			}
+			
+			#box span {
+				position: absolute;width: 30px;height: 70px;background-color: rgba(0,0,0,.2);color: #FFFFFF;line-height: 70px;text-align: center;top: 50%;margin-top:-35px
+				;
+			}
+			#box #left,#box #right:hover{background-color: #666666}
+			#left {
+				left: 0;
+			}
+			
+			#right {
+				right: 0;
+			}
